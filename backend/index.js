@@ -9,11 +9,11 @@ const { GoogleGenerativeAI } = require("@google/generative-ai");
 const WebSocket = require("ws"); //  WebSocket
 
 // Initialize Gemini API
-const genAI = new GoogleGenerativeAI("AIzaSyA6qyo-MMq-8xCNll9c7GR4c8eb8hD-gpQ");
+const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 
 const app = express();
 const port = 5000;
-const uri = "mongodb+srv://admin:admin@admin.my9cbhe.mongodb.net/?retryWrites=true&w=majority&appName=admin";
+const uri = process.env.MONGO_URI;
 
 app.use(cors());
 app.use(express.json());

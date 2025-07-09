@@ -32,7 +32,7 @@ const LoginPage = () => {
       if (formData.role === "admin") {
         try {
           const response = await fetch(
-            "http://localhost:5000/admin-credentials"
+            "https://smart-taskflow-2x1k.onrender.com/admin-credentials"
           );
           const data = await response.json();
           if (data.email && data.password) {

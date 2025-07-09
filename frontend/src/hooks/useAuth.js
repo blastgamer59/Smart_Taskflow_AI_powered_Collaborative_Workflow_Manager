@@ -22,7 +22,7 @@ export function UserAuthContextProvider({ children }) {
         setUser(currentUser);
 
         // Fetch role from backend
-        const res = await fetch(`http://localhost:5000/get-role?email=${currentUser.email}`);
+        const res = await fetch(`https://smart-taskflow-2x1k.onrender.com/get-role?email=${currentUser.email}`);
         if (!res.ok) {
           throw new Error("Failed to fetch role");
         }
@@ -55,7 +55,7 @@ export function UserAuthContextProvider({ children }) {
 
       if (currentUser) {
         try {
-          const res = await fetch(`http://localhost:5000/get-role?email=${currentUser.email}`);
+          const res = await fetch(`https://smart-taskflow-2x1k.onrender.com/get-role?email=${currentUser.email}`);
           if (!res.ok) {
             throw new Error("Failed to fetch role");
           }

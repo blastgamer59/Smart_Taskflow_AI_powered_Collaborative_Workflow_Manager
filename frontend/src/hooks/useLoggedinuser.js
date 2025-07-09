@@ -11,7 +11,7 @@ const useLoggedinuser = () => {
 
     const fetchUser = async () => {
       try {
-        const response = await fetch(`http://localhost:5000/loggedinuser?email=${email}`);
+        const response = await fetch(`https://smart-taskflow-2x1k.onrender.com/loggedinuser?email=${email}`);
         const data = await response.json();
         setLoggedinuser(data[0] || {});
       } catch (error) {

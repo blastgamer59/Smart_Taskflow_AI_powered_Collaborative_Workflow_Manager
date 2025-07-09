@@ -17,7 +17,7 @@ const Header = ({ user, onSignOut, onToggleSidebar }) => {
     const fetchNotifications = async () => {
       try {
         const response = await fetch(
-          `http://localhost:5000/notifications?userId=${user.id}`
+          `https://smart-taskflow-2x1k.onrender.com/notifications?userId=${user.id}`
         );
         if (!response.ok) throw new Error("Failed to fetch notifications");
         const data = await response.json();
@@ -61,7 +61,7 @@ const Header = ({ user, onSignOut, onToggleSidebar }) => {
   const markNotificationAsRead = async (notificationId) => {
     try {
       const response = await fetch(
-        `http://localhost:5000/notifications/${notificationId}/read`,
+        `https://smart-taskflow-2x1k.onrender.com/notifications/${notificationId}/read`,
         {
           method: "PUT",
           headers: { "Content-Type": "application/json" },

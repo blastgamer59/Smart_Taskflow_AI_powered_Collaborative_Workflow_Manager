@@ -41,9 +41,9 @@ const AdminAnalytics = () => {
     try {
       setLoading(true);
       const [usersRes, tasksRes, projectsRes] = await Promise.all([
-        fetch('http://localhost:5000/users'),
-        fetch('http://localhost:5000/tasks?isAdmin=true'),
-        fetch('http://localhost:5000/projects?isAdmin=true')
+        fetch('https://smart-taskflow-2x1k.onrender.com/users'),
+        fetch('https://smart-taskflow-2x1k.onrender.com/tasks?isAdmin=true'),
+        fetch('https://smart-taskflow-2x1k.onrender.com/projects?isAdmin=true')
       ]);
 
       const users = await usersRes.json();

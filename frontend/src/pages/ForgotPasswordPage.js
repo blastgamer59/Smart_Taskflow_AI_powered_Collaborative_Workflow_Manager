@@ -27,7 +27,7 @@ const ForgotPasswordPage = () => {
     try {
       // Check if email is registered and if it's an admin
       console.log("Checking email:", email); // Debug log
-      const response = await fetch("http://localhost:5000/check-email", {
+      const response = await fetch("https://smart-taskflow-2x1k.onrender.com/check-email", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email }),
@@ -67,7 +67,7 @@ const ForgotPasswordPage = () => {
       console.log("Sending password reset email to regular user"); // Debug log
       const auth = getAuth();
       await sendPasswordResetEmail(auth, email, {
-        url: `http://localhost:5000/login`,
+        url: `http://localhost:3000/login`,
         handleCodeInApp: true,
       });
 

@@ -26,14 +26,14 @@ const AdminTaskAssignment = ({
   const [error, setError] = useState(null);
 
     //  WebSocket connection
-const { socket } = useWebSocket(`wss://http://localhost:5000`);
+const { socket } = useWebSocket(`wss://smart-taskflow-2x1k.onrender.com`);
 
   // Fetch all non-admin users for the assignee dropdown
   useEffect(() => {
     const fetchUsers = async () => {
       setIsLoadingUsers(true);
       try {
-        const response = await fetch("http://localhost:5000/users");
+        const response = await fetch("https://smart-taskflow-2x1k.onrender.com/users");
         if (!response.ok) {
           throw new Error("Failed to fetch users");
         }
@@ -62,7 +62,7 @@ const { socket } = useWebSocket(`wss://http://localhost:5000`);
     const fetchProjects = async () => {
       setIsLoadingProjects(true);
       try {
-        const response = await fetch(`http://localhost:5000/projects?isAdmin=true`);
+        const response = await fetch(`https://smart-taskflow-2x1k.onrender.com/projects?isAdmin=true`);
         if (!response.ok) throw new Error("Failed to fetch projects");
         const data = await response.json();
         setProjects(

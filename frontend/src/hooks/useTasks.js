@@ -11,7 +11,7 @@ export const useTasks = (userId) => {
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const response = await fetch("http://localhost:5000/users");
+        const response = await fetch("https://smart-taskflow-2x1k.onrender.com/users");
         const data = await response.json();
         setUsers(data);
       } catch (error) {
@@ -33,7 +33,7 @@ export const useTasks = (userId) => {
 
         // Fetch projects where the user is a member
         const response = await fetch(
-          `http://localhost:5000/projects?userId=${userId}`
+          `https://smart-taskflow-2x1k.onrender.com/projects?userId=${userId}`
         );
 
         if (!response.ok) {
@@ -72,7 +72,7 @@ export const useTasks = (userId) => {
     try {
       // Fetch tasks for the specific project AND assigned to the specific user
       const response = await fetch(
-        `http://localhost:5000/tasks?projectId=${currentProject.id}&userId=${userId}`
+        `https://smart-taskflow-2x1k.onrender.com/tasks?projectId=${currentProject.id}&userId=${userId}`
       );
       const data = await response.json();
       setTasks(data);
@@ -89,7 +89,7 @@ export const useTasks = (userId) => {
   // Add Task (might be used if users can create their own tasks, otherwise remove)
   const addTask = async (taskData) => {
     try {
-      const response = await fetch("http://localhost:5000/tasks", {
+      const response = await fetch("https://smart-taskflow-2x1k.onrender.com/tasks", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(taskData),
@@ -111,7 +111,7 @@ export const useTasks = (userId) => {
   // Update Task
   const updateTask = async (taskId, updates) => {
     try {
-      const response = await fetch(`http://localhost:5000/tasks/${taskId}`, {
+      const response = await fetch(`https://smart-taskflow-2x1k.onrender.com/tasks/${taskId}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(updates),
@@ -136,7 +136,7 @@ export const useTasks = (userId) => {
   // Delete Task
   const deleteTask = async (taskId) => {
     try {
-      const response = await fetch(`http://localhost:5000/tasks/${taskId}`, {
+      const response = await fetch(`https://smart-taskflow-2x1k.onrender.com/tasks/${taskId}`, {
         method: "DELETE",
       });
       if (response.ok) {
@@ -155,7 +155,7 @@ export const useTasks = (userId) => {
   // Update Task Status (used for drag & drop)
   const updateTaskStatus = async (taskId, newStatus) => {
     try {
-      const response = await fetch(`http://localhost:5000/tasks/${taskId}`, {
+      const response = await fetch(`https://smart-taskflow-2x1k.onrender.com/tasks/${taskId}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ status: newStatus }),

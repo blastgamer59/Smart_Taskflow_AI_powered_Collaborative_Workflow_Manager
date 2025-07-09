@@ -20,7 +20,7 @@ const AIAssistant = ({ onAddTask, userRole }) => {
 
     try {
       const response = await fetch(
-        "http://localhost:5000/generate-ai-suggestions",
+        "https://smart-taskflow-2x1k.onrender.com/generate-ai-suggestions",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },

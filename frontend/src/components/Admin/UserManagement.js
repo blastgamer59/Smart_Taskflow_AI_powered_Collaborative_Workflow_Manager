@@ -19,7 +19,7 @@ const UserManagement = ({ onAssignTask }) => {
     const fetchUsers = async () => {
       setIsLoading(true);
       try {
-        const response = await fetch("http://localhost:5000/users");
+        const response = await fetch("https://smart-taskflow-2x1k.onrender.com/users");
         if (!response.ok) throw new Error("Failed to fetch users");
         const data = await response.json();
         setUsers(
@@ -45,7 +45,7 @@ const UserManagement = ({ onAssignTask }) => {
     setError(null);
     try {
       const response = await fetch(
-        `http://localhost:5000/tasks?assigneeId=${userId}&isAdmin=true`
+        `https://smart-taskflow-2x1k.onrender.com/tasks?assigneeId=${userId}&isAdmin=true`
       );
       if (!response.ok) {
         const errorData = await response.json();
@@ -73,7 +73,7 @@ const UserManagement = ({ onAssignTask }) => {
 
     try {
       const response = await fetch(
-        `http://localhost:5000/users/${userToDelete}`,
+        `https://smart-taskflow-2x1k.onrender.com/users/${userToDelete}`,
         {
           method: "DELETE",
           headers: {

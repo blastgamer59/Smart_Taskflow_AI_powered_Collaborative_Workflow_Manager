@@ -120,7 +120,7 @@ const Dashboard = ({ onSignOut }) => {
         estimatedHours: taskData.estimatedHours || 5,
       };
 
-      const response = await fetch("http://localhost:5000/tasks", {
+      const response = await fetch("https://smart-taskflow-2x1k.onrender.com/tasks", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(newTask),

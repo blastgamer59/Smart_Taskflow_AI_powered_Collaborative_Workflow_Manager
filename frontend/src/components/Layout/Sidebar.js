@@ -47,7 +47,7 @@ const Sidebar = ({
       setLoading(true);
       try {
         const response = await fetch(
-          `http://localhost:5000/projects?userId=${userId}`
+          `https://smart-taskflow-2x1k.onrender.com/projects?userId=${userId}`
         );
         if (!response.ok) throw new Error("Failed to fetch projects");
         const data = await response.json();

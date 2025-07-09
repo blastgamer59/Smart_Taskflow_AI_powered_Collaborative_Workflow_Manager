@@ -36,7 +36,7 @@ const RegisterPage = () => {
   useEffect(() => {
     const checkAdminExists = async () => {
       try {
-        const res = await fetch("http://localhost:5000/admin-email");
+        const res = await fetch("https://smart-taskflow-2x1k.onrender.com/admin-email");
         const data = await res.json();
         if (data.adminEmail) setAdminExists(true);
       } catch (err) {
@@ -102,7 +102,7 @@ const RegisterPage = () => {
       });
 
       // Step 2: Send user data to MongoDB
-      const response = await fetch("http://localhost:5000/register", {
+      const response = await fetch("https://smart-taskflow-2x1k.onrender.com/register", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

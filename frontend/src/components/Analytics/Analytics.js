@@ -39,8 +39,8 @@ const Analytics = ({ userId, isAdmin }) => {
       
       // Fetch all necessary data in parallel
       const [tasksResponse, projectsResponse] = await Promise.all([
-        fetch(`http://localhost:5000/tasks?assigneeId=${userId}`),
-        fetch(`http://localhost:5000/projects?userId=${userId}`)
+        fetch(`https://smart-taskflow-2x1k.onrender.com/tasks?assigneeId=${userId}`),
+        fetch(`https://smart-taskflow-2x1k.onrender.com/projects?userId=${userId}`)
       ]);
 
       if (!tasksResponse.ok || !projectsResponse.ok) {

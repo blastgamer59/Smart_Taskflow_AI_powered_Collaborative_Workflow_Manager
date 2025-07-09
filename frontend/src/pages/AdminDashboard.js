@@ -33,7 +33,7 @@ const AdminDashboard = ({ user, onSignOut }) => {
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const response = await fetch("http://localhost:5000/users");
+        const response = await fetch("https://smart-taskflow-2x1k.onrender.com/users");
         if (!response.ok) throw new Error("Failed to fetch users");
         const data = await response.json();
         setUsers(data);
@@ -50,7 +50,7 @@ const AdminDashboard = ({ user, onSignOut }) => {
     setIsLoadingProjects(true);
     try {
       const response = await fetch(
-        "http://localhost:5000/projects?isAdmin=true"
+        "https://smart-taskflow-2x1k.onrender.com/projects?isAdmin=true"
       );
       if (!response.ok) throw new Error("Failed to fetch projects");
       const data = await response.json();
@@ -78,7 +78,7 @@ const AdminDashboard = ({ user, onSignOut }) => {
   // Fetch all tasks for activity log
   const fetchAllTasks = useCallback(async () => {
     try {
-      const response = await fetch("http://localhost:5000/tasks?isAdmin=true");
+      const response = await fetch("https://smart-taskflow-2x1k.onrender.com/tasks?isAdmin=true");
       if (!response.ok) throw new Error("Failed to fetch all tasks");
       const data = await response.json();
       setAllTasks(data);
@@ -113,7 +113,7 @@ const AdminDashboard = ({ user, onSignOut }) => {
   // Handle task assignment
   const handleTaskAssignment = async (taskData) => {
     try {
-      const response = await fetch("http://localhost:5000/tasks", {
+      const response = await fetch("https://smart-taskflow-2x1k.onrender.com/tasks", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(taskData),
@@ -149,7 +149,7 @@ const AdminDashboard = ({ user, onSignOut }) => {
     }
 
     try {
-      const response = await fetch("http://localhost:5000/projects", {
+      const response = await fetch("https://smart-taskflow-2x1k.onrender.com/projects", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -176,7 +176,7 @@ const AdminDashboard = ({ user, onSignOut }) => {
   const handleDeleteProject = async (projectId) => {
     try {
       const response = await fetch(
-        `http://localhost:5000/projects/${projectId}`,
+        `https://smart-taskflow-2x1k.onrender.com/projects/${projectId}`,
         { method: "DELETE" }
       );
       if (!response.ok) throw new Error("Failed to delete project");
@@ -218,7 +218,7 @@ const AdminDashboard = ({ user, onSignOut }) => {
         assigneeId: taskData.assigneeId || currentProject.members[0], // Default to first member
       };
 
-      const response = await fetch("http://localhost:5000/tasks", {
+      const response = await fetch("https://smart-taskflow-2x1k.onrender.com/tasks", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(newTask),
@@ -251,7 +251,7 @@ const AdminDashboard = ({ user, onSignOut }) => {
       }
 
       const response = await fetch(
-        `http://localhost:5000/projects/${selectedProject.id}`,
+        `https://smart-taskflow-2x1k.onrender.com/projects/${selectedProject.id}`,
         {
           method: "PUT",
           headers: { "Content-Type": "application/json" },

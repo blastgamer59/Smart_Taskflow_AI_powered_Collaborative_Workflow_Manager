@@ -12,9 +12,8 @@ Smart Taskflow is a full-stack project management system designed for real-world
 * 📋 Kanban-style task board with task creation and status updates
 * 📊 Analytics: task completion, productivity insights, and team stats
 * 🤖 AI Assistant powered by **Google Gemini**
-
-  * Users get actionable technical task suggestions
-  * Admins get high-level project breakdowns with team role mapping
+* Users get actionable technical task suggestions
+* Admins get high-level project breakdowns with team role mapping
 * 🧾 MongoDB backend with full REST API support
 
 ---

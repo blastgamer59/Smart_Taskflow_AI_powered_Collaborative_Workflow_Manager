@@ -833,7 +833,3 @@ run().catch(console.dir);
 app.get("/", (req, res) => {
   res.send("Smart WorkFlow is working");
 });
-
-app.listen(port, () => {
-  console.log(`Smart WorkFlow is working on port ${port}`);
-});
